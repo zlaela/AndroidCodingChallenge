@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/display_title"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="display_title"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/mpaa_rating"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        app:layout_constraintTop_toTopOf="@id/display_title"
+        app:layout_constraintBottom_toBottomOf="@id/display_title"
+        app:layout_constraintStart_toEndOf="@id/display_title"
+        tools:text="mpaa_rating" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/byline"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_8"
+        app:layout_constraintTop_toBottomOf="@id/display_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/image"
+        tools:text="byline"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/publication_date"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_8"
+        app:layout_constraintTop_toBottomOf="@id/byline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/image"
+        tools:text="publication_date"
+        />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/dp_125"
+        android:layout_height="@dimen/dp_125"
+        android:layout_margin="@dimen/dp_8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_launcher_foreground"
+        />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dp_8"
+        android:paddingTop="@dimen/dp_8"
+        android:background="@color/colorDivider"
+        />
+</android.support.constraint.ConstraintLayout>

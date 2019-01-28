@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion compile_sdk
+
+    defaultConfig {
+        applicationId "net.tribls.androidcodingchallenge"
+        minSdkVersion min_sdk
+        targetSdkVersion target_sdk
+
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation project(path: ':models')
+    implementation project(path: ':presentation')
+
+    implementation deps.design
+    implementation deps.v7Support
+    implementation deps.constraintLayout
+    implementation deps.junit
+
+    // Kotlin
+    implementation deps.kotlin
+    // RxJava
+    implementation deps.rxJava
+    // Glide for images
+    implementation deps.glide
+    annotationProcessor deps.kapt
+
+    // Retrofit HTTP client
+    implementation deps.retrofit
+    implementation deps.retrofitAdapterRxJava
+    // HTTP logging
+    implementation deps.okHttp_logging
+    // Moshi to parse JSON into Java objects
+    implementation deps.moshi
+}
+repositories {
+    mavenCentral()
+}
